@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.jetpack.navigation.FragmentHome"
+        android:label="navigation_first_fragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="arg1"
+            android:defaultValue="hello world"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.jetpack.navigation.FragmentHomeTwo"
+        android:label="navigation_second_fragment"
+        tools:layout="@layout/fragment_home_two" >
+        <action
+            android:id="@+id/action_secondFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.jetpack.navigation.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_activityTwo"
+            app:destination="@id/activityTwo" />
+    </fragment>
+    <activity
+        android:id="@+id/activityTwo"
+        android:name="com.jetpack.navigation.ActivityTwo"
+        android:label="activity_two"
+        tools:layout="@layout/activity_two" />
+</navigation>
